@@ -1,0 +1,11 @@
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-flow: flex-start;
+  position: fixed;
+  bottom: 0;
+  & > div {
+    padding: 14px;
+  }
+}
