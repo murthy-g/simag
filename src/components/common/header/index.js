@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './header.scss';
-import {HeaderService} from '../../../services/header';
+// import {HeaderService} from '../../../services/header';
+import instagram from '../../../assets/jpeg/instagram.png';
 
 class Header extends Component {
   constructor(props) {
@@ -58,6 +59,11 @@ class Header extends Component {
   render() {
     return (
       <nav className="nav" onClick={this.toggleMenuIcon}>
+        <img
+          src={instagram}
+          alt="instagram"
+          style={{width: '45px', height: '45px'}}
+        />
         <div className="menu-icon"></div>
         <ul
           className={`nav-container ${
