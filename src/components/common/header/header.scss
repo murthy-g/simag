@@ -5,7 +5,7 @@
   margin: auto;
   width: 100%;
   transition: all 0.5s ease;
-  box-shadow: 0px 15px 10px -15px #111;    
+  box-shadow: 0px 15px 10px -15px #111;
   z-index: 200000;
   background-color: white;
 }
@@ -56,9 +56,12 @@
 
 @media (max-width: 767px) {
   .menu-icon {
-    display: block;
-    &:active > .nav-item {
-      transform: translateY(0);
+    display: flex;
+    flex: 1;
+    &:active ~ .nav-container {
+      & > .nav-item {
+        transform: translateY(0);
+      }
     }
   }
 

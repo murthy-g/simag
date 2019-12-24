@@ -85,12 +85,11 @@ img {
 
 .flex-container > div {
   background-color: white;
-  margin-top: 50px;
   width: 80%;
   text-align: left;
   > img {
-    width: 100px;
-    height: 100px;
+    max-width: 100%;
     position: static;
   }
+  padding-bottom: 50px;
 }

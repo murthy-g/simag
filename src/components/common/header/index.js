@@ -7,6 +7,7 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.props = props;
+    this.navContainer = React.createRef();
     this.state = {
       toggleMenu: false,
       header: [
@@ -36,6 +37,7 @@ class Header extends Component {
           menuItem: 'Admin',
         },
       ],
+      mobileView: window.innerWidth <= 767 && window.innerWidth <= 767,
     };
     this.toggleMenuIcon = this.toggleMenuIcon.bind(this);
   }
@@ -51,20 +53,27 @@ class Header extends Component {
   // }
 
   toggleMenuIcon() {
-    this.setState({
-      toggleMenu: !this.state.toggleMenu,
-    });
+    if (this.state.mobileView) {
+      this.setState({
+        toggleMenu: !this.state.toggleMenu,
+      });
+      this.navContainer.current.classList.toggle('change');
+    }
   }
 
   render() {
     return (
-      <nav className="nav" onClick={this.toggleMenuIcon}>
+      <nav
+        className="nav"
+        onClick={this.toggleMenuIcon}
+        ref={this.navContainer}
+      >
+        <div className="menu-icon"></div>
         <img
           src={instagram}
-          alt="instagram"
+          alt="title"
           style={{width: '45px', height: '45px'}}
         />
-        <div className="menu-icon"></div>
         <ul
           className={`nav-container ${
             this.state.toggleMenu ? 'show-menu' : ''
